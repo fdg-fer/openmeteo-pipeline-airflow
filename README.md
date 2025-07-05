@@ -1,1 +1,0 @@
-# api-previsao-clima-capitais

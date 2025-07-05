@@ -1,20 +1,19 @@
 #%%
 import requests
 import pandas as pd
-import json
 
 
-def get_city_coord(city):
+def busca_coordenada(city):
     # URL da API da Nominatim busca de lat, lon
     url = "https://nominatim.openstreetmap.org/search"
 
 
     params = {
-        # Query que busca a cidade 
-        "q": f"{city}, Brasil",
-        "format": "json", 
-        "limit": 1   
-    }  
+    "city": city,
+    "country": "Brasil",
+    "format": "json",
+    "limit": 1    
+    }     
 
     headers = {
         "User-Agent": "clima-teste/1.0"   
@@ -26,7 +25,10 @@ def get_city_coord(city):
         data = response.json()
         if data:
             # Pega primeiro dict e a chave, convert de string para número flutuante
-            return float(data[0]["lat"]), float(data[0]["lon"])
+            return (
+                float(data[0]["lat"]),
+                float(data[0]["lon"]),
+            )
         else:
             print(f" Não encontrado: {city}")
            
@@ -78,12 +80,14 @@ def previsao_temp(lat, lon, cidade):
         result = pd.DataFrame({
             "date": min_temps['data'],
             "cidade": cidade,
+             "lat": lat,
+            "lon": lon,
             "time_min": min_temps['datetime'].dt.time,
             "temp_min": min_temps['temperatura'],
             "vento_10m_min": min_temps['vento_10m'],
             "time_max": max_temps['datetime'].dt.time ,
             "temp_max": max_temps['temperatura'],
-            "vento_10m_max": max_temps['vento_10m'],
+            "vento_10m_max": max_temps['vento_10m']
                           
         })
         return(result)
@@ -113,85 +117,11 @@ def chuva_total(lat, lon, cidade):
     df = pd.DataFrame({
         "datetime": hora_chuva.date,
         "chuva_total": chuva,
-        "cidade": cidade        
+        "cidade": cidade    
     })
 
     return(df)
 
 
 
-def main():
-    # 1. Lê o JSON e carrega lista de capitais
-    with open('capitais.json', 'r') as file:
-        capitais = json.load(file)
 
-    # 2. Obter coordenadas
-    localizacao = []
-    
-    # Iteração para chamada da funcao que retorna(lat, long, cidade)
-    for cidade in capitais:
-
-        lat, lon = get_city_coord(cidade)
-        localizacao.append({
-            "latitude": lat,
-            "longitude": lon,
-            "cidade": cidade
-        })
-        
-        
-
-    # 3. Obter previsões de temperatura e vento
-    lista_temp = []
-    
-    # Iteração para chamada da funcao que retorna(temperatura, vento) 
-    for linha in localizacao:
-        lat = linha["latitude"]
-        lon = linha["longitude"]
-        cidade = linha["cidade"]
-        
-        df_previsao = previsao_temp(lat, lon, cidade)
-        
-        if df_previsao is not None:
-            lista_temp.append(df_previsao)
-            
-    # Unindo todas iterações
-    df_temp_total = pd.concat(lista_temp, ignore_index=True)
-
-
-
-    # 4. Obter previsões de chuva
-    lista_chuva = []
-    
-    # Iteração para chamada da funcao que retorna(chuva) 
-    for linha in localizacao:
-        lat = linha["latitude"]
-        lon = linha["longitude"]
-        cidade = linha["cidade"]
-        
-        df_chuva = chuva_total(lat, lon, cidade)
-        
-        if df_chuva is not None:
-            lista_chuva.append(df_chuva)
-            
-    # Unindo todas iterações        
-    df_chuva_total = pd.concat(lista_chuva, ignore_index=True)
-
-
-
-    # 5. Unir dados
-    df_completo = pd.merge(
-        df_temp_total,
-        df_chuva_total,
-        left_on=['cidade', 'date'], 
-        right_on=['cidade', 'datetime'],
-        how='left'    
-    ).drop(columns=['datetime'])
-    
-    return df_completo   
-    
-    
-if __name__ == "__main__":
-    df = main()
-    print(df.head())
-
-    
