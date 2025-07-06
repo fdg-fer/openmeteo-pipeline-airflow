@@ -1,6 +1,4 @@
-#%%
 import json
-
 
 capitais = [
     "Rio Branco", "Maceió", "Macapá", "Manaus", "Salvador", "Fortaleza", "Brasília", "Vitória", 
