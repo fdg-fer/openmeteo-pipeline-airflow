@@ -1,4 +1,4 @@
-
+#%%
 import pandas as pd
 import json
 from tqdm import tqdm
@@ -15,7 +15,7 @@ def main():
     localizacao = []
     
     # Iteração para chamada da funcao que retorna(lat, long, cidade)
-    for cidade in tqdm(capitais,  desc="🔵 Gerando coordenadas"):
+    for cidade in tqdm(capitais,  desc="🔵 Gerando dados de coordenada"):
 
         lat, lon = busca_coordenada(cidade)
         localizacao.append({
@@ -29,17 +29,16 @@ def main():
     lista_temp = []
     
     # Iteração para chamada da funcao que retorna(temperatura, vento) 
-    for linha in tqdm(localizacao, desc="🟠 Gerando temperaturas"):
+    for linha in tqdm(localizacao, desc="🟠 Gerando dados de temperatura"):
         lat = linha["latitude"]
         lon = linha["longitude"]
         cidade = linha["cidade"]
 
         
-        df_previsao = previsao_temp(lat, lon, cidade)
+        df_temp = previsao_temp(lat, lon, cidade)
         
-        if df_previsao is not None:
-            
-            lista_temp.append(df_previsao)
+        if df_temp is not None:
+            lista_temp.append(df_temp)
         time.sleep(1.1)
             
     # Unindo todas iterações
@@ -51,7 +50,7 @@ def main():
     lista_chuva = []
     
     # Iteração para chamada da funcao que retorna(chuva) 
-    for linha in tqdm(localizacao, desc="🟢 Gerando chuva"):
+    for linha in tqdm(localizacao, desc="🟢 Gerando dados de chuva"):
         lat = linha["latitude"]
         lon = linha["longitude"]
         cidade = linha["cidade"]
@@ -60,7 +59,6 @@ def main():
         df_chuva = chuva_total(lat, lon, cidade)
         
         if df_chuva is not None:
-            
             lista_chuva.append(df_chuva)
     time.sleep(1.1)
             
