@@ -1,4 +1,3 @@
-
 import requests
 import pandas as pd
 
@@ -98,7 +97,7 @@ def previsao_temp(lat, lon, cidade):
     except Exception as e:
         print("Erro encontrado em {cidade}: {e} ")
 
-def chuva_total(lat, lon, cidade):
+def prev_chuva(lat, lon, cidade):
     # URL da API da Open Meteo busca de chuva baseada na lat, lon
     url = "https://api.open-meteo.com/v1/forecast"
 
