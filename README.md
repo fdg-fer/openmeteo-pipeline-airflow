@@ -18,7 +18,7 @@ A proposta é extrair dados estruturados de forma automática, organizá-los em 
 │     │     ↪ Requisição para API Nominatim (coordenadas)
 │     │     ↪ Retorna: lat, lon, regiao
 │     │
-│     ├── def previsao_temp(lat, lon, cidade)
+│     ├── def previsao_temperatura(lat, lon, cidade)
 │     │     ↪ Requisição para OpenMeteo (temperatura e vento por hora)
 │     │     ↪ Cria DataFrame com mínimas e máximas por data
 │     │
@@ -26,7 +26,7 @@ A proposta é extrair dados estruturados de forma automática, organizá-los em 
 │     │     ↪ Requisição para OpenMeteo (chuva diária)
 │     │     ↪ Cria DataFrame com soma diária da chuva
 │     │
-│     ├── def historico_temp(lat, lon, cidade)
+│     ├── def historico_temperatura(lat, lon, cidade)
 │     │     ↪ Requisição para OpenMeteo (histórico de temperatura e vento por hora)
 │     │     ↪ Cria DataFrame com mínimas e máximas por data
 │     │
