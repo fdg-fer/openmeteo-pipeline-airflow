@@ -49,3 +49,16 @@ A proposta é extrair dados estruturados de forma automática, organizá-los em 
 │     └── Junta tudo em df_historico e imprime/salva o resultado
 │
 └── 📄 capitais.json  ← Lista com as 27 capitais brasileiras
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+## 🔁 Pipeline de Coleta e Armazenamento de Dados Climáticos
+
+| Etapa                    | Ferramenta               | Descrição                                 |
+|--------------------------|--------------------------|---------------------------------------------|
+| 1. Coleta API            | Python (`clima.py`)      | Realiza requisições para APIs de clima (Nominatim e Open-Meteo). |
+| 2. Salvar Bronze         | Databricks File System   | Armazena os dados brutos no formato JSON para rastreabilidade e reprocessamento. |
+| 3. Tratar Dados          | Pandas ou PySpark        | Processa e estrutura os dados em DataFrames. |
+| 4. Salvar Silver/Gold    | Delta Table ou Parquet   | Salva os dados tratados de forma estruturada e otimizada para consulta. |
+| 5. Inserir em PostgreSQL | Pandas + SQLAlchemy      | Exporta os dados finais para um banco PostgreSQL externo. |
