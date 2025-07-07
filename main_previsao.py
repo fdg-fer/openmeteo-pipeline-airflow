@@ -3,7 +3,7 @@ import pandas as pd
 import json
 from tqdm import tqdm
 import time
-from clima import busca_coordenada, previsao_temp, chuva_total
+from clima import busca_coordenada, previsao_temp, previsao_chuva
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
         cidade = linha["cidade"]
         
         
-        df_chuva = chuva_total(lat, lon, cidade)
+        df_chuva = previsao_chuva(lat, lon, cidade)
         
         if df_chuva is not None:
             lista_chuva.append(df_chuva)
@@ -64,7 +64,6 @@ def main():
             
     # Unindo todas iterações        
     df_chuva_total = pd.concat(lista_chuva, ignore_index=True)
-
 
 
     # 5. Unir dados
