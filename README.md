@@ -11,13 +11,6 @@ A proposta é extrair dados estruturados de forma automática, organizá-los em 
 ## 🚧 Estrutura do Projeto
 
 ```text
-projeto_clima/
-├── clima.py            # funções reutilizáveis (módulo principal)
-├── main.py             # script principal que roda a coleta de dados
-├── gerar_capitais.py   # cria/atualiza o arquivo capitais.json
-└── capitais.json       # contém os nomes e dados das capitais brasileiras
-
-```text
 📁 projeto_clima/
 │
 ├── 📄 clima.py  ← Funções reutilizáveis
@@ -29,15 +22,30 @@ projeto_clima/
 │     │     ↪ Requisição para OpenMeteo (temperatura e vento por hora)
 │     │     ↪ Cria DataFrame com mínimas e máximas por data
 │     │
-│     └── def chuva_total(lat, lon, cidade)
-│           ↪ Requisição para OpenMeteo (chuva diária)
-│           ↪ Cria DataFrame com soma diária da chuva
+│     ├── def chuva_total(lat, lon, cidade)
+│     │     ↪ Requisição para OpenMeteo (chuva diária)
+│     │     ↪ Cria DataFrame com soma diária da chuva
+│     │
+│     ├── def historico_temp(lat, lon, cidade)
+│     │     ↪ Requisição para OpenMeteo (histórico de temperatura e vento por hora)
+│     │     ↪ Cria DataFrame com mínimas e máximas por data
+│     │
+│     └── def historico_chuva(lat, lon, cidade)
+│           ↪ Requisição para OpenMeteo (chuva histórica diária)
+│           ↪ Cria DataFrame com soma da chuva por dia
 │
-├── 📄 main.py  ← Onde o código roda
+├── 📄 main_previsao.py  ← Roda as previsões
 │     ├── Carrega capitais do arquivo JSON
 │     ├── Loop 1: busca coordenadas (e região) de cada cidade
-│     ├── Loop 2: previsões de temperatura para cada cidade
-│     ├── Loop 3: previsões de chuva para cada cidade
-│     └── Junta tudo em df_completo e imprime resultado final
+│     ├── Loop 2: previsão de temperatura e vento
+│     ├── Loop 3: previsão de chuva
+│     └── Junta tudo em df_previsao e imprime/salva o resultado
+│
+├── 📄 main_historico.py  ← Roda o histórico
+│     ├── Carrega capitais do arquivo JSON
+│     ├── Loop 1: busca coordenadas
+│     ├── Loop 2: histórico de temperatura e vento
+│     ├── Loop 3: histórico de chuva
+│     └── Junta tudo em df_historico e imprime/salva o resultado
 │
 └── 📄 capitais.json  ← Lista com as 27 capitais brasileiras
