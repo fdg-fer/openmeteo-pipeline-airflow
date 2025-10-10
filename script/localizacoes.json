@@ -1,0 +1,137 @@
+[
+  {
+    "cidade":"Rio Branco",
+    "latitude":-9.9765362,
+    "longitude":-67.8220778
+  },
+  {
+    "cidade":"Maceió",
+    "latitude":-9.6476843,
+    "longitude":-35.7339264
+  },
+  {
+    "cidade":"Macapá",
+    "latitude":0.0401529,
+    "longitude":-51.0569588
+  },
+  {
+    "cidade":"Manaus",
+    "latitude":-3.1316333,
+    "longitude":-59.9825041
+  },
+  {
+    "cidade":"Salvador",
+    "latitude":-12.9822499,
+    "longitude":-38.4812772
+  },
+  {
+    "cidade":"Fortaleza",
+    "latitude":-3.7304512,
+    "longitude":-38.5217989
+  },
+  {
+    "cidade":"Brasília",
+    "latitude":-15.7939869,
+    "longitude":-47.8828
+  },
+  {
+    "cidade":"Vitória",
+    "latitude":-20.3200917,
+    "longitude":-40.3376682
+  },
+  {
+    "cidade":"Goiânia",
+    "latitude":-16.680882,
+    "longitude":-49.2532691
+  },
+  {
+    "cidade":"São Luís",
+    "latitude":-2.5295265,
+    "longitude":-44.2963942
+  },
+  {
+    "cidade":"Cuiabá",
+    "latitude":-15.5986686,
+    "longitude":-56.0991301
+  },
+  {
+    "cidade":"Campo Grande",
+    "latitude":-20.4640173,
+    "longitude":-54.6162947
+  },
+  {
+    "cidade":"Belo Horizonte",
+    "latitude":-19.9227318,
+    "longitude":-43.9450948
+  },
+  {
+    "cidade":"Belém",
+    "latitude":-1.45056,
+    "longitude":-48.4682453
+  },
+  {
+    "cidade":"João Pessoa",
+    "latitude":-7.1215981,
+    "longitude":-34.882028
+  },
+  {
+    "cidade":"Curitiba",
+    "latitude":-25.4944375,
+    "longitude":-49.284271
+  },
+  {
+    "cidade":"Recife",
+    "latitude":-8.0584933,
+    "longitude":-34.8848193
+  },
+  {
+    "cidade":"Teresina",
+    "latitude":-5.0874608,
+    "longitude":-42.8049571
+  },
+  {
+    "cidade":"Rio de Janeiro",
+    "latitude":-22.9110137,
+    "longitude":-43.2093727
+  },
+  {
+    "cidade":"Natal",
+    "latitude":-5.805398,
+    "longitude":-35.2080905
+  },
+  {
+    "cidade":"Porto Alegre",
+    "latitude":-30.0324999,
+    "longitude":-51.2303767
+  },
+  {
+    "cidade":"Porto Velho",
+    "latitude":-8.7494525,
+    "longitude":-63.8735438
+  },
+  {
+    "cidade":"Boa Vista",
+    "latitude":2.8208478,
+    "longitude":-60.6719582
+  },
+  {
+    "cidade":"Florianópolis",
+    "latitude":-27.5973002,
+    "longitude":-48.5496098
+  },
+  {
+    "cidade":"São Paulo",
+    "latitude":-23.5506507,
+    "longitude":-46.6333824
+  },
+  {
+    "cidade":"Aracaju",
+    "latitude":-10.9162061,
+    "longitude":-37.0774655
+  },
+  {
+    "cidade":"Palmas",
+    "latitude":-10.1837852,
+    "longitude":-48.3336423
+  }
+]
