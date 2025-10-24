@@ -1,6 +1,6 @@
 # Arquitetura do Pipeline Meteorológico (Airflow + Docker + Python + Postgres + Power BI)
 
-![Alt](img/Diagrama_proj.jpg)
+![Alt](img/Diagrama_proj.png)
 
 ## 1️⃣ Objetivo
 
