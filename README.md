@@ -18,7 +18,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 ## 2️⃣ Arquitetura
 (diagrama + explicação das camadas)
 
-![Alt](img/diagrama_dag.png)
+![Alt2](img/diagrama_dag.png)
 
 ## 3️⃣ DAGs e Tasks
 Listagem e explicação de cada task.
