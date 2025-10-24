@@ -14,6 +14,7 @@ A arquitetura foi projetada para simular um fluxo **real de engenharia de dados*
 O objetivo é demonstrar, de forma prática, como construir uma DAG completa — desde a **extração de dados brutos via API**, até a **carga estruturada em banco de dados relacional**, dentro de um ambiente **containerizado e reproduzível**.
 
 
+
 ## 2️⃣ Arquitetura
 
 (diagrama + explicação das camadas)
