@@ -20,10 +20,10 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 (diagrama + explicação das camadas)
 
 
-![Arquitetura](./img/diagrama_proj2.png)
+![Arquitetura](img/diagrama_proj2.png)
 
 
-![DAG](./img/diagrama_dag.png)
+![DAG](img/diagrama_dag.png)
 
 
 
