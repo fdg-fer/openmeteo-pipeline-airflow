@@ -15,12 +15,12 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 
 
 ## 2️⃣ Arquitetura
+
 (diagrama + explicação das camadas)
 
 ![Arquitetura](./img/Diagrama_proj.png)
-
-
 ![DAG](./img/diagrama_dag.png)
+
 
 
 ## 3️⃣ DAGs e Tasks
