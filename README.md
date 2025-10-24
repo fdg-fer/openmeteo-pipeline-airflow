@@ -1,16 +1,6 @@
-# 🌤️ API de Previsão do Clima - Capitais Brasileiras
+# Arquitetura do Pipeline Meteorológico (Airflow + Docker + Python + Postgres + Power BI)
 
-Este projeto realiza a coleta de dados meteorológicos (como temperatura, vento e chuva) para **capitais brasileiras**, utilizando uma API pública de clima.
-
-Construção de pipeline de dados meteorológicos via API, com foco em boas práticas de engenharia de dados e tratamento robusto de dados JSON
-
-A proposta é extrair dados estruturados de forma automática, organizá-los em JSON e abrir caminho para análises posteriores, como tendências regionais, previsões semanais ou visualizações.
-
----
-
-## 🚧 Estrutura do Projeto
-
-## Pipeline Meteo - Airflow + Docker + Postgres
+![Alt](img/diagrama_proj.png)
 
 ## 1️⃣ Objetivo
 
