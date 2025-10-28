@@ -22,10 +22,11 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 
 ![Arquitetura](img/projeto.png)
 
+---
 
 ![DAG](img/diagrama_dag.png)
 
-
+---
 
 ## 3️⃣ DAGs e Tasks
 Listagem e explicação de cada task.
