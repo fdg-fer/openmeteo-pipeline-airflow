@@ -19,7 +19,6 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 
 (diagrama + explicação das camadas)
 
-![Arquitetura](./img/projeto.png)
 
 
 ![DAG](./img/diagrama_dag.png)
