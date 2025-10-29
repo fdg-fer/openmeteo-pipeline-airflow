@@ -26,7 +26,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 ## 3️⃣ DAGs e Tasks
 Listagem e explicação de cada task.
 
-![Arquitetura](https://raw.githubusercontent.com/fdg-fer/openmeteo-pipeline-airflow/main/img/projeto.png)
+![Arquitetura](![https://raw.githubusercontent.com/fdg-fer/openmeteo-pipeline-airflow/main/img/projeto.png])
 
 
 ![DAG](https://raw.githubusercontent.com/fdg-fer/openmeteo-pipeline-airflow/main/img/dag.png)
