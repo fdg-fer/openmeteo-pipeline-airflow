@@ -29,7 +29,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 Listagem e explicação de cada task.
 
 
-![DAG](./img/diagrama_dag.png) 
+![DAG](./img/dag.png) 
 
 
 ## 4️⃣ Observabilidade
