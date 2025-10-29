@@ -12,7 +12,7 @@ A arquitetura foi projetada para simular um fluxo **real de engenharia de dados*
 - **Armazenamento intermediário** em formato Parquet
 
 
-  ![Projeto](img/projeto.png)
+![Projeto](img/projeto.png)
 
 
 O objetivo é demonstrar, de forma prática, como construir uma DAG completa — desde a **extração de dados brutos via API**, até a **carga estruturada em banco de dados relacional**, dentro de um ambiente **containerizado e reproduzível**.
@@ -24,7 +24,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 (diagrama + explicação das camadas)
 
 
-  ![DAG](<img/diagrama_dag.png>)
+![DAG](<img/diagrama_dag.png>)
 
 
 ## 3️⃣ DAGs e Tasks
@@ -42,15 +42,7 @@ Serviços do Docker Compose e volumes.
 ## 7️⃣ Execução e Agendamento
 Como rodar manualmente e como o cron diário foi configurado.
 
-```markdown
 ### ▶️ Execução manual da DAG (últimos 6 meses)
-
-```bash
-docker exec -it airflow-airflow-scheduler-1 bash -lc \
-  "airflow dags trigger meteo_historico_nivel2 \
-   --conf '{\"start\":\"2025-04-10\",\"end\":\"2025-10-09\"}'"
-
-```
 
 ## 8️⃣ Próximos Passos
 Melhorias futuras (Data Lake, alertas, dashboard).
@@ -64,10 +56,5 @@ Cada task possui logging estruturado com informações de início, fim e volume 
 
 Exemplo de trecho de log (Airflow UI → Task → Logs):
 
-[INFO] [definir_intervalo] Intervalo: 2025-10-01 → 2025-10-03  
-[INFO] [coletar_temperatura] Temperatura gravada: /opt/airflow/data/meteo/2025-10-01_a_2025-10-03/temperatura.parquet | linhas=27  
-[INFO] [mergear_parquets] Merged gravado: merged.parquet | linhas=27  
-[INFO] [validar_schema] Schema OK. Linhas: 27  
-[INFO] [upsert_postgres] UPSERT concluído. Linhas afetadas: 27
 
 ---
