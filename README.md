@@ -20,7 +20,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 (diagrama + explicação das camadas)
 
 
-![DAG](<img/diagrama_dag.png>)
+  ![DAG](<img/diagrama_dag.png>)
 
 
 ## 3️⃣ DAGs e Tasks
