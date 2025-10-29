@@ -21,7 +21,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 
 
 
-![DAG](./img/diagrama_dag.png)
+![DAG](img/diagrama_dag.png)
 
 
 ## 3️⃣ DAGs e Tasks
