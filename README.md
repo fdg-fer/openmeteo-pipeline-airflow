@@ -30,44 +30,47 @@ Este repositório demonstra a construção de um pipeline de dados meteorológic
 
 ## 📁 Estrutura do projeto
 
+```bash
 api_clima/
 ├── docker-compose/
-│ └── docker-compose.yml
+│   └── docker-compose.yml
 ├── img/
-│ ├── projeto.png
-│ └── dag.png
+│   ├── projeto.png
+│   └── dag.png
 ├── scripts/
-│ └── meteo_pipeline.py
+│   └── meteo_pipeline.py
 ├── README.md
 └── requirements.txt
+```
 
 
 O objetivo é demonstrar, de forma prática, como construir uma DAG completa — desde a **extração de dados brutos via API**, até a **carga estruturada em banco de dados relacional**, dentro de um ambiente **containerizado e reproduzível**.
-
-
 
 ## 2️⃣ Arquitetura
 
 A arquitetura reflete um fluxo real de Engenharia de Dados, com ingestão incremental, controle de histórico e modularização das etapas (ingestão, processamento e persistência).
 
-
 ![Arquitetura](./img/projeto.png)
 
 
 ## 3️⃣ DAGs e Tasks
-Listagem e explicação de cada task.
 
-## 2️⃣ Arquitetura
-
-(diagrama + explicação das camadas)
-
-
+A DAG principal (`meteo_historico_nivel2`) realiza o fluxo ETL completo:
 
 ![DAG](./img/dag.png)
 
+### Principais Tasks
+- `extract_openmeteo`: coleta dados da API
+- `transform_data`: normaliza e aplica validações básicas
+- `load_to_postgres`: insere no banco de dados
+- `check_quality`: valida a integridade e formato dos dados
+
 
 ## 4️⃣ Observabilidade
-Logs, validação, retries, tempo de execução, alertas.
+
+- Monitoramento de execução via **Airflow UI**
+- Logs estruturados por task com timestamp, volume e status
+- Política de **retries automáticos** e alertas de falha (configurável)
 
 ## 5️⃣ Governança e Data Quality
 Como o pipeline garante integridade, schema e histórico.
@@ -92,11 +95,9 @@ docker exec -it airflow-airflow-scheduler-1 bash -lc \
    
 💡 Explicação rápida:
 
-docker exec -it airflow-airflow-scheduler-1 bash -lc → acessa o container do scheduler do Airflow.
-
-airflow dags trigger meteo_historico_nivel2 → dispara manualmente a DAG.
-
---conf → passa as datas de início e fim do intervalo para o script dentro da DAG.
+- docker exec -it airflow-airflow-scheduler-1 bash -lc → acessa o container do scheduler do Airflow.
+- airflow dags trigger meteo_historico_nivel2 → dispara manualmente a DAG.
+- --conf → passa as datas de início e fim do intervalo para o script dentro da DAG.
 
 As datas aqui cobrem os últimos seis meses (23/04/2025 → 23/10/2025).
 
@@ -104,16 +105,4 @@ As datas aqui cobrem os últimos seis meses (23/04/2025 → 23/10/2025).
 Melhorias futuras (Data Lake, alertas, dashboard).
 
 
----
 
-## 📊 Observabilidade e Logs
-
-Cada task possui logging estruturado com informações de início, fim e volume de dados processados.
-
-Exemplo de trecho de log (Airflow UI → Task → Logs):
-
-
----# openmeteo-pipeline-airflow
-# openmeteo-pipeline-airflow-
-# teste
-# openmeteo-pipeline-airflow
