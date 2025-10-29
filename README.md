@@ -59,6 +59,7 @@ A DAG principal (`meteo_historico_nivel2`) realiza o fluxo ETL completo:
 
 ![DAG](./img/dag.png)
 
+
 ### Principais Tasks
 - `extract_openmeteo`: coleta dados da API
 - `transform_data`: normaliza e aplica validações básicas
