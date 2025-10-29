@@ -21,6 +21,7 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 (diagrama + explicação das camadas)
 
 
+![Arquitetura](./img/projeto.png)
 
 
 ## 3️⃣ DAGs e Tasks
@@ -29,9 +30,6 @@ Listagem e explicação de cada task.
 ## 2️⃣ Arquitetura
 
 (diagrama + explicação das camadas)
-
-
-![Arquitetura](./img/projeto.png)
 
 
 
@@ -68,3 +66,4 @@ Exemplo de trecho de log (Airflow UI → Task → Logs):
 ---# openmeteo-pipeline-airflow
 # openmeteo-pipeline-airflow-
 # teste
+# openmeteo-pipeline-airflow
