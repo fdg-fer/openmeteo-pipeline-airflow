@@ -25,8 +25,6 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 
 
 
-
-
 ## 3️⃣ DAGs e Tasks
 Listagem e explicação de cada task.
 
