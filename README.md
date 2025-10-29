@@ -67,3 +67,4 @@ Exemplo de trecho de log (Airflow UI → Task → Logs):
 
 ---# openmeteo-pipeline-airflow
 # openmeteo-pipeline-airflow-
+# teste
