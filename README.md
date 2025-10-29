@@ -26,11 +26,16 @@ O objetivo é demonstrar, de forma prática, como construir uma DAG completa —
 ## 3️⃣ DAGs e Tasks
 Listagem e explicação de cada task.
 
-![Arquitetura](![https://raw.githubusercontent.com/fdg-fer/openmeteo-pipeline-airflow/main/img/projeto.png])
+## 2️⃣ Arquitetura
+
+(diagrama + explicação das camadas)
 
 
-![DAG](https://raw.githubusercontent.com/fdg-fer/openmeteo-pipeline-airflow/main/img/dag.png)
+![Arquitetura](./img/projeto.png)
 
+
+
+![DAG](./img/dag.png)
 
 
 ## 4️⃣ Observabilidade
@@ -60,4 +65,4 @@ Cada task possui logging estruturado com informações de início, fim e volume 
 Exemplo de trecho de log (Airflow UI → Task → Logs):
 
 
----
+---# openmeteo-pipeline-airflow
